@@ -1,0 +1,145 @@
+
+li {
+    line-height: 25px;
+    font-size: 18px;
+}
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    
+    grid-template-areas: 
+        ". ma ma ma ma ma ma ma ma ma ma ."
+        ". sh sh sh sh sh sh sh sh sh sh ."
+        ". so so so so so so so so so so ."
+        ". na na na na na na na na na na ."
+        ". sm sm sm sm sm sm sm sm sm sm ."
+        ". wa wa wa wa wa wa wa wa wa wa ."
+        ". sf sf sf sf sf sf sf sf sf sf ."
+}
+
+.container main, .container nav, .container header, .container footer, .container > div {
+    display: flex;
+    align-items: center;
+    grid-gap: 3px;
+  }
+
+.mail {
+    grid-area: ma;
+    justify-content: center;
+    background-color: #A1C1E5;
+}
+
+.site-header {
+    grid-area: sh;
+    justify-content: center;
+}
+
+.socials {
+    grid-area: so;
+    justify-content: center;
+
+}
+
+.navigation {
+    height: 40px;
+    grid-area: na;
+    justify-content: space-evenly;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navigation a:visited {
+    color: black;
+}
+
+.navigation a:hover {
+    color: #64BC7B;
+    border-top: #64BC7B solid 3px;
+}
+
+.site-main {
+    grid-area: sm;
+    justify-content: center;
+}
+
+.widget-area {
+    grid-area:wa;
+    justify-content: space-between;
+    background-color: lightgrey;
+    margin: 0px;
+    padding: 20px 20px 20px 20px;
+    border: darkseagreen solid 1px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.site-footer {
+    grid-area: sf;
+    background-color: darkslategray;
+    color : white;
+    justify-content: center;
+}
+
+.adres {
+    color:L darkslategray;
+    background-color: rgb(200, 203, 206);
+    margin: 25px;
+    padding: 10px 0px 10px 20px;
+    border-left: #A1C1E5 solid 4px;
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        grid-template-areas:
+        
+        ". ma ma sh sh sh sh sh sh so so ."
+        ". na na na na na na na na na na ."
+        ". sm sm sm sm sm sm sm sm sm sm ."
+        ". wa wa wa wa wa wa wa wa wa wa ."
+        ". sf sf sf sf sf sf sf sf sf sf ."
+    }
+
+    .mail {
+        background-color:white;
+    }
+
+    .container div.mail {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+    .container nav.socials {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .widget-area {
+        grid-area:wa;
+        justify-content: space-between;
+        
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        grid-template-areas:
+        ". ma ma sh sh sh sh sh sh so so ."
+        ". na na na na na na na na na na ."
+        ". sm sm sm sm sm sm sm sm wa wa ."
+        ". sf sf sf sf sf sf sf sf sf sf ."
+    }
+    
+    .container aside {
+        grid-template-columns: 100%;
+        
+    }
+}
